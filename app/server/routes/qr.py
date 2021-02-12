@@ -1,6 +1,7 @@
 from bson.errors import InvalidId
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
+
 from server.database import add_qr, retrieve_qr
 from server.models.qr import QR
 

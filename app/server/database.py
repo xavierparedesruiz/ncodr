@@ -1,5 +1,5 @@
-from bson.objectid import ObjectId
 import motor.motor_asyncio
+from bson.objectid import ObjectId
 
 from server.models.qr import QR
 
@@ -23,7 +23,6 @@ async def add_qr(qr_data: QR) -> dict:
     return qr_serializer(new_qr)
 
 
-# Retrieve a QR with a matching ID
 async def retrieve_qr(qr_id: str) -> dict:
     qr = await qr_collection.find_one({"_id": ObjectId(qr_id)})
     if qr:
